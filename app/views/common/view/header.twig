@@ -1,0 +1,77 @@
+<!DOCTYPE html > 
+<html ng-app="Home">
+<head>
+	
+	<!-- Meta data -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta itemprop="name" content="">
+    <meta itemprop="description" content="">
+    <meta name="keywords" content="mobile, security, backup, open source">
+    <meta name="title" content="" >
+	<meta name="subject" content="" >
+	<meta name="robots" content="index,follow" >
+	<meta content="Ceeq" name="author">
+	<meta content="text ; still image" name="type">
+	<meta content="text/html" name="format">
+	<meta content="" name="identifier">
+	<meta content="en-GB" name="language">
+	<meta content="World" name="coverage">
+	<meta content="" name="Owner">
+	<meta content="ATW Labs, India" name="copyright">
+	
+	<title>{{ title }}</title>
+	
+	<!-- Styles and fonts -->
+	<link rel="stylesheet" type="text/css" href="/public/styles/home.css" >
+	<link href='http://fonts.googleapis.com/css?family=Comfortaa|Roboto' rel='stylesheet' type='text/css'>
+	
+	<link rel="icon" type="image/png" href="">	
+	</head>
+	
+	<!-- Content Body -->
+	<body>
+	<noscript>This is embarrasing ! Javascript is OFF !</noscript>
+
+	<!--shadow panel -->
+	<div class="ajaxshadow"></div>
+	
+	<!-- ajax container -->
+    <div class="ajax-wp"></div>
+    
+	<!-- content wrapper -->
+    <div class="base-wp">
+		
+		<!-- Header bar -->
+		<header>
+			
+			<!-- Logo -->
+			<span class="logo">
+				<a href="/">ceeq</a>
+				</span>
+			
+			<!-- User account -->
+			<div class="account-wp right>
+                <ul>
+                    <li class="name"></li>
+                     <li>
+                        <input type="submit" value="Logout" />
+                    </li>
+                </ul>
+				</div>
+			
+			<!-- User login -->
+			<div class="login-wp right" ng-controller="LoginController">
+				<ul>
+					<li>
+						<input type="text" name="username" placeholder="Username" title="Enter your Mobile Number." ng-model="name" required/>
+					</li>
+					<li>
+						<input type="password" name="password" placeholder="PIN" title="Enter your PIN." ng-model="password" required/>
+					</li>
+					<li>
+						<input type="submit" value="Sign In" ng-submit="login()"/>
+					</li>
+				</ul>
+				</div>
+			
+			</header>

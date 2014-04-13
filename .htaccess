@@ -1,0 +1,41 @@
+# Options -Indexes
+# Options +FollowSymLinks
+
+# Set the default file for indexes
+# DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+
+    # activate URL rewriting
+    RewriteEngine on
+
+    RewriteBase /ceeq/
+
+    # do not rewrite links to the documentation, assets and public files
+    RewriteCond $1 !^(public)
+
+    # do not rewrite for php files in the document root, robots.txt or the maintenance page
+    RewriteCond $1 !^([^\..]+\.php|robots\.txt|maintenance\.html)
+
+    # but rewrite everything else
+    RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+
+    ReWriteCond %{HTTP:accept-encoding} gzip
+    RewriteCond %{HTTP_USER_AGENT} !Safari
+    # make sure there's no trailing .gz on the url
+    ReWriteCond %{REQUEST_FILENAME} !^.+\.gz$
+    # check to see if a .gz version of the file exists.
+    RewriteCond %{REQUEST_FILENAME}.gz -f
+    # All conditions met so add .gz to URL filename (invisibly)
+    RewriteRule ^(.+) $1.gz [QSA,L]
+
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+
+    ErrorDocument 404 index.php
+
+</IfModule>  
