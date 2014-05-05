@@ -1,0 +1,228 @@
+
+  
+.content-box{
+    text-align:justify;
+    padding:20px 50px;
+}
+  
+.content, .content-box ul li{
+    letter-spacing:.5px;
+    word-spacing:2px;
+    font:14px roboto, tahoma, helvetica;
+    
+}
+  
+.content-box a{
+    color:orange;
+    text-decoration:none;
+}
+
+.headings{ 
+    font:32px comfortaa;
+    color:#09c;
+    border-bottom:2px solid #09c;
+}
+  
+  
+.questions, .headings-content{
+    font:14px roboto, tahoma, helvetica;
+    color:#09c;
+}
+  
+.questions{
+    margin:4px 2px;
+}
+
+.content, .feedback-box form{
+    background:white;
+    padding:16px;
+    border:1px solid #f5f5f5;
+    border-radius:5px;
+
+}
+  
+
+.feedbox-box label{
+  float:left;
+  margin-top:20px;
+}
+  
+  
+.feedbox-box input, .feedbox-box textarea, .download-box input{
+    width:292px;
+    height:28px;
+    padding:4px 8px;
+    border:1px solid #c3c3c3;
+    margin-top:8px;
+    border-radius:3px;
+}
+   
+.message-label{
+     position:relative;
+
+}
+   
+.feedbox-box label, .download-box label{
+     font:bold 14px roboto;
+     color:#505050;
+     
+}
+   
+.feedbox-box textarea{
+    width:300px;
+    height:80px;
+    padding:4px;
+    margin-left:50px;
+}
+
+.fb-inputs{
+  margin-left:71px;
+}
+   
+.download-box input[type="email"]{
+   margin-left:16px; 
+}
+
+.captcha{
+  margin:4px 110px;
+}
+.recaptcha_only_if_privacy{
+  display:none;
+}
+
+.recaptchable input{
+  display:none;
+}
+      
+.feedbox-box .submit, .download-box .submit{
+    width:80px;
+    top:0px;
+    background:#09c;
+    color:#fafafa;
+    border:1px solid #09c;
+    margin-left:344px;
+    cursor: pointer;
+    border-radius:2px;
+}
+
+.download-box .submit{
+  width:80px;
+  margin-left:290px;
+  border:1px solid #09c;
+}
+   
+#map-canvas{
+    height:100%;
+}
+  
+.about-wp, .login-wp{
+    z-index:2;
+    cursor:pointer;
+    padding: 0 2%;
+    color:#404040;
+    
+}
+
+.about-user ul li:nth-child(2){
+  float:left;
+  height:28px;
+  padding:8px 4px;
+  border-left:none;
+}
+  
+.login-user a{
+    color:#3498db;
+    text-align:center;
+}
+
+
+.about-user input{
+    display:inline;
+    color: #fafafa;
+    font: bold 14px arial, helvetica;
+    cursor: pointer;
+    height:28px;
+    width:60px;
+    background:none;
+    border:none;
+}
+
+
+.about-user input:focus{
+    outline:none;
+}
+
+.device-box{
+    background:#fafafa;
+    width:360px;
+    position:absolute;
+    top:80px;
+    left:1%;
+    box-shadow:0px 0px 5px #d5d5d5;
+    border:1px solid #d2d2d2;
+    border-radius:3px;
+ }
+ 
+.remote-actions{
+     background:#09c;
+     color:#fafafa;
+     font:bold 14px roboto;
+     text-align:center;
+     box-shadow:inset 0px 0px 2px #606060;
+}
+
+.remote-actions li{
+    border-bottom:1px solid #fafafa;
+    padding:12px 28px;
+    cursor:pointer;
+}
+
+.remote-actions li:last-child {
+    border-bottom-width:0px;
+}
+
+.about-device{
+    font:bold 14px roboto;
+    padding:4px 16px;
+    text-align:left;
+    width:210px;
+}
+
+.about-device .name{
+    font:bold 14px roboto;
+    padding:0px 24px;
+    background:url("../images/g3.png") no-repeat left top;
+    background-size:14px 24px;
+}
+
+.about-device ul{
+    margin:12px 0px;
+}
+
+.about-device-middle{
+    margin-top:16px;
+}
+
+.about-device-middle label{
+    font:bold 12px roboto;
+}
+
+.about-device-bottom{
+    font:bold 12px roboto;
+    position:absolute; 
+    bottom:12px;
+}
+
+.loader img{
+  width:20px;
+  height:12px;
+  margin-right:8px;
+}
+
+.about-device .last-seen{
+  font:12px roboto;
+}
+
+.about-device .registered-on{
+  font:12px roboto;
+}

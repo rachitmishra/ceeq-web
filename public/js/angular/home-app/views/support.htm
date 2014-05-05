@@ -1,0 +1,40 @@
+<div class="content-box">
+	<p class="headings">Contact us</p><br/>
+
+	<p class="content">You may contact us by email at <a href="mailto:support@ceeq.in">support@ceeq.in</a>.</p><br/>
+
+	<p class="content">You may follow us at twitter at <a href="http://twitter.com/ceeqtweets">@ceeqtweets</a> &amp; at facebook at <a href="http://facebook.com/atwindia">@atwindia</a>.</p><br/>
+
+	<p class="content">You may also open an issue in the repository <a href="https://github.com/rachitrm/ceeq/issues/new">Github Repository</a>.</p><br/>
+
+	<p class="headings-content">Send your query, feedback, or suggestions</p><br/>
+	
+	<div class="feedbox-box">
+		<div class="error">Sorry, the email address is either already registered or invalid !</div>
+			<ul>
+				<li>
+					<label for="name">Name</label>
+					<input class="fb-inputs" type="text" name="name" placeholder="name" title="Enter your name" required/>
+				</li>
+				<li>
+					<label for="name">Email</label>
+					<input class="fb-inputs" type="email" name="email" placeholder="email" title="Enter your email" required/>
+				</li>
+				<li>
+					<label class="message-label" for="message">Message</label>
+					<textarea class="fb-inputs" name="message" placeholder="message"> </textarea>
+				</li>
+				 <li class="captcha">
+				 	 
+				 <?php 
+				 	require_once(APPPATH.'/libraries/recaptcha.php');
+  					$publickey = "6LclmeoSAAAAAE4GwNHw6xJvLKoBGt7svsoKgTtX";
+  					echo recaptcha_get_html($publickey); 
+  					?>
+  				</li>
+
+				<li><input class="submit feedback" type="submit" value="Send" /><span class="lspin"></span></li>
+				<li class="clearfix"></li>
+				</ul>
+				</div></form>
+			</div>

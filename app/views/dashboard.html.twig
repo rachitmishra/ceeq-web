@@ -1,0 +1,39 @@
+<?php
+	  $this->load->helper('url');
+      $this->load->library('session'); 
+	?>	
+		  
+    
+	<div class="container">
+    	
+    	<div class="device-box">
+            <aside class="right remote-actions">
+                <ul>
+                    <li class="command" ajax="alarm">Alarm</li>
+                    <a href="<?php echo base_url('location')?>"><li class="command" ajax="locate">Locate</li></a>
+                    <li class="command" ajax="ring">Ring</li>
+                    <li class="command" ajax="wipe">Wipe</li>
+                    <li class="command" ajax="about">Message</li>
+                    <li class="command" ajax="about">Lock</li>
+                    <li class="command" ajax="about">About</li>
+                </ul>
+            </aside>
+            <div class="left about-device">
+                <ul class="about-device-top">
+                	<li class="name"><?=$manufacturer." ".$model ?></li>
+        		</ul>
+                <ul class="about-device-middle-1 clear">
+                    <li><label class="locate">Locating</label></li>
+                    <li class="loader"><img src="<?php echo base_url('assets/images/s.gif')?>" /></li>
+                </ul>
+                <ul class="about-device-middle-2 clear">
+                    <li><label>Last seen</label></li>
+                    <li class="last-seen"><?=$last_seen ?></li>
+                </ul>
+        		<ul class="about-device-bottom">
+                    <li><label>Registered on</label></li>
+                	<li class="registered-on"><?=$reg_on ?></li>
+        		</ul>
+            </div>
+            <div class="clear"></div>
+	</div>
