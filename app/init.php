@@ -7,6 +7,7 @@ require ROOT.'/app/vendor/redbean/rb.phar';
 $slim_configuration = require_once ROOT.'/app/config/config.php';
 
 $app = new \Slim\Slim($slim_configuration);
+$app->add(new \Slim\Middleware\ContentTypes());
 $app->setName('Ceeq');
 
 session_cache_limiter(false);

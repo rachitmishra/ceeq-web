@@ -1,0 +1,70 @@
+		<div class="content-box">
+			<p class="headings">Permissions</p><br/>
+			<ul >
+				<li class="questions">What are Permissions required by Ceeq?</b></li>
+				<li class="content">
+				android.permission.READ_CONTACTS</br>
+    			android.permission.WRITE_CONTACTS</br> 
+    			android.permission.READ_CALL_LOG</br> 
+    			android.permission.WRITE_CALL_LOG</br>
+    			android.permission.READ_SMS</br> 
+    			android.permission.WRITE_SMS</br>
+    			android.permission.READ_USER_DICTIONARY</br>
+    			android.permission.WRITE_USER_DICTIONARY</br>
+
+
+    			android.permission.READ_EXTERNAL_STORAGE</br> 
+    			android.permission.WRITE_EXTERNAL_STORAGE</br>
+
+    			android.permission.ACCESS_FINE_LOCATION</br>
+    			
+    			android.permission.CAMERA</br>
+
+    			android.permission.SEND_SMS</br>
+    			android.permission.RECEIVE_SMS</br>
+
+				android.permission.READ_PHONE_STATE</br>
+    			android.permission.RECEIVE_BOOT_COMPLETED</br>
+
+    			android.permission.INTERNET</br> 
+    			android.permission.ACCESS_NETWORK_STATE</br>
+    			android.permission.PROCESS_OUTGOING_CALLS</br> 
+    			android.permission.GET_TASKS</br>
+    			com.google.android.providers.gsf.permission.READ_GSERVICES</br>
+    			com.android.alarm.permission.SET_ALARM" </br>
+    			android.permission.GET_ACCOUNTS" </br>
+    		</li></br>			
+				<li class="questions">Why So Many Permissions?</li>
+				<li class="content">Ceeq requires 23 permissions. You must be wondering why we require so many permissions. Exactly, when we started we just required just 2-3 permissions like for showing the map etc. But as we increased the number of features, the number of permissions too increase subsequently; because of the beauty of Android OS, without your permission no one can harm your data or device. Still we have tried to reduce those permissions which are not very important, but those used are just to increase the total number of features.</li></br>
+
+				<li class="questions">Explain all permissions?</li>
+				<li class="content">
+					<ol>
+						<li>We will try to explain all the required permissions in simplest words.</li><br/>
+						<li>We need the permission to <i>read and write your contacts, messages, call logs, and user dictionary</i> for the sole purpose of backups.</li>
+						<br/>
+						<li>We need the permission to <i>read and write external storage</i>, to save and retrieve data backups files and application preferences on external storage.</li>
+						<br/>
+						<li>We need the permission to <i>access the fine location(GPS)</i> for providing accurate location tracking, whenever you or your device are in trouble.</li>
+						<br/>
+						<li>We need the permission to <i>access camera</i> for taking pictures in case security breach, or when wrong passcodes are inserted to lockscreen.</li>
+						<br/>
+						<li>We need the permission to <i>send and receive messages</i> so that we may check for the remote command send by you, also last we need to send Messages to respond to your remote commands.</li>
+						<br/>
+						<li>We need the permission to <i>check boot completion, and read phone state</i> is required, to check for phone reboot, and to detect SIM changes.</li>
+						<br/>
+						<li>We need the permission to <i>access network state and internet</i>,  to check when you are connected to internet; and to upload your login information.</li>
+						<br/>
+						<li>We need the permission to <i>process outgoing calls</i>, to check if you are trying to launch the application in stealth mode from dialpad.</li>
+						<br/>
+						<li>We need the permission to <i>check the running tasks</i> only when the lockscreen is running, to keep the lockscreen always on top, so that no one can minimize the lockscreen and access your data or apps.</li>
+						<br/>
+						<li>We need the permission to <i>get accounts, and read g services</i> for Google+ login &amp; maps, mandatory bt Google itself.</li>
+						<br/>
+						<li>Now, listening to Incoming Messages or SIM changes is completely done by application itself, and so we are not spying you ever, and we will never eat up your balance by sending unnecessary messages.</li>
+						<br/>
+					</ol>
+				</li>
+			</ul><br/>
+			<p class="content">Have further questions ?  Mail us at <a href="mailto:support@ceeq.in">support@ceeq.in</a> or submit your question <a href="<?php echo base_url('/support') ?>">here</a></p>
+		</div>

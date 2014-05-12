@@ -11,7 +11,7 @@ home.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 	.when('/about',
 	{	
 		title: 'About us',
-		templateUrl: 'public/js/angular/home-app/views/about.htm',
+		templateUrl: 'public/js/angular/common/views/about.htm',
 		controller: 'AboutController'
 	})
 	.when('/password',
@@ -23,43 +23,43 @@ home.config(['$routeProvider', '$locationProvider', function($routeProvider, $lo
 	.when('/privacy',
 	{	
 		title: 'Data privacy &amp; Policy',
-		templateUrl: 'public/js/angular/home-app/views/privacy.htm',
+		templateUrl: 'public/js/angular/common/views/privacy.htm',
 		controller: 'AboutController'
 	})
 	.when('/faqs',
 	{	
 		title: 'Frequenty asked questions',
-		templateUrl: 'public/js/angular/home-app/views/faqs.htm',
+		templateUrl: 'public/js/angular/common/views/faqs.htm',
 		controller: 'AboutController'
 	})
 	.when('/support',
 	{	
 		title: 'Support & Contact',
-		templateUrl: 'public/js/angular/home-app/views/support.htm',
+		templateUrl: 'public/js/angular/common/views/support.htm',
 		controller: 'SupportController'
 	})
 	.when('/terms',
 	{	
 		title: 'Terms &amp; Conditions',
-		templateUrl: 'public/js/angular/home-app/views/terms.htm',
+		templateUrl: 'public/js/angular/common/views/terms.htm',
 		controller: 'AboutController'
 	})
 	.when('/download',
 	{	
 		title: 'Download',
-		templateUrl: 'public/js/angular/home-app/views/dwonload.htm',
+		templateUrl: 'public/js/angular/common/views/dwonload.htm',
 		controller: 'AboutController'
 	})
 	.when('/donate',
 	{	
 		title: 'Sponsor us',
-		templateUrl: 'public/js/angular/home-app/views/donate.htm',
+		templateUrl: 'public/js/angular/common/views/donate.htm',
 		controller: 'AboutController'
 	})
 	.when('/not-found',
 	{	
 		title: 'Not found',
-		templateUrl: 'public/js/angular/common/views/not-found.htm',
+		templateUrl: 'public/js/angular/common/errors/not-found.htm',
 		controller: 'AboutController'
 	})
 	.otherwise({
@@ -101,11 +101,11 @@ home.factory('SessionService', ['$http', 'UserSessionService', function(http, Us
 	return {
 
     create: function (user) {
-      return http.post('session/create', user);
+      return http.post('api/session/create', user);
     },
 
     destroy: function (user) {
-      return http.post('session/destroy', user);
+      return http.post('api/session/destroy', user);
     },
 
     isCreated: function () {
@@ -142,20 +142,22 @@ home.controller('SupportController', ['$scope', '$rootScope', 'ApiService',
 ]);
 
 
-home.controller('LoginController', ['$scope', '$rootScope', 'SessionService', 
-	function(scope, rootScope, Session) {
+home.controller('LoginController', ['$scope', '$location', '$rootScope', 'SessionService', 
+	function(scope, location, rootScope, Session) {
 	
 		scope.user = {
 			username : '',
-			password : ''
+			password : '',
+			count 	 : '0'
 		}
 
 		scope.login = function(user) {
-			Session.create(user).then(function(){
-				// yo, redirecting from server
+			Session.create(user).then(function(response){
+				if(response.data.success)
+					window.location.href = response.data.redirect_url;
 			}, 
-			function(){
-				rootScope.$broadcast(SESSION_EVENTS.sessionFailure);
+			function(response){
+				
 			});
 		}
 	}
