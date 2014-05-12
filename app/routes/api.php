@@ -21,12 +21,12 @@
 		$response['Content-Type'] = 'application/json';
 
 		$data = array();
-		$data["success"]	   = getSuccess($code);
-    	$data["message"]	   = getMessage($code);
-    	$data["reason"]	       = getReason($code);
-    	$data["redirect_url"]  = getRedirectUrl($code);
-    	$data["attempt_count"] = getAttemptCount($count);
-		
+		$data["success"]	= getSuccess($code);
+    		$data["message"]	= getMessage($code);
+    		$data["reason"]	        = getReason($code);
+    		$data["redirect_url"]   = getRedirectUrl($code);
+    		$data["attempt_count"]  = getAttemptCount($count);
+		 
 		$response->status(getStatus($code));
 		
 		$response->body(')]},'.json_encode($data));
