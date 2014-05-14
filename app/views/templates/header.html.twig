@@ -1,13 +1,13 @@
-<!DOCTYPE html > 
+<!DOCTYPE html >
 <html ng-app="Home" ng-controller="HomeController">
 <head>
-	
+
 	<!-- Meta data -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta itemprop="name" content="">
-    <meta itemprop="description" content="">
-    <meta name="keywords" content="mobile, security, backup, open source">
-    <meta name="title" content="" >
+  <meta itemprop="description" content="">
+  <meta name="keywords" content="mobile, security, backup, open source">
+  <meta name="title" content="" >
 	<meta name="subject" content="" >
 	<meta name="robots" content="index,follow" >
 	<meta content="Ceeq" name="author">
@@ -19,37 +19,37 @@
 	<meta content="" name="Owner">
 	<meta content="ATW Labs, India" name="copyright">
 	<base href="/ceeq/">
-	
+
 	<title ng-bind="title">Ceeq Mobile Application - Device Security &amp; Backup</title>
-	
+
 	<!-- Styles and fonts -->
 	<link rel="stylesheet" type="text/css" href="{{ siteUrl('/public/css/home.css') }}" >
 	<link href='http://fonts.googleapis.com/css?family=Comfortaa|Roboto' rel='stylesheet' type='text/css'>
-	
-	<link rel="icon" type="image/png" href="">	
+
+	<link rel="icon" type="image/png" href="">
 	</head>
-	
+
 	<!-- Content Body -->
 	<body >
 	<noscript>This is embarrasing ! Javascript is OFF !</noscript>
 
 	<!--shadow panel -->
 	<div class="ajaxshadow"></div>
-	
+
 	<!-- ajax container -->
     <div class="ajax-wp"></div>
-    
+
 	<!-- content wrapper -->
     <div class="base-wp">
-		
+
 		<!-- Header bar -->
 		<header>
-			
+
 			<!-- Logo -->
 			<span class="logo">
 				<a href="#">ceeq</a>
 				</span>
-			
+
 			<!-- User account -->
 			<div class="account-wp right hide">
                 <ul>
@@ -59,13 +59,14 @@
                     </li>
                 </ul>
 				</div>
-			
+
 			<!-- User login -->
 			<div class="login-wp right" ng-controller="LoginController" >
 				<form ng-submit="login(user)">
 				<ul>
 					<li>
-						<input type="text" name="username" placeholder="Username" title="Enter your Mobile Number." ng-model="user.username" required/>
+						<input type="text" name="username" placeholder="Username"
+							title="Enter your Mobile Number." ng-model="user.username" required/>
 					</li>
 					<li>
 						<input type="password" name="password" placeholder="PIN" title="Enter your PIN." ng-model="user.password" required/>
@@ -80,5 +81,5 @@
 				</ul>
 				</form>
 				</div>
-			
+
 			</header>

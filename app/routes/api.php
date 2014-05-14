@@ -1,5 +1,5 @@
 <?php
-	
+
 	use Respect\Validation\Validator as vln;
 
 	/* api status codes */
@@ -11,24 +11,25 @@
 	define("PASS_FAILURE", "445");
 
 	function returnResponse($app, $code, $count=0) {
-		
-		$app-setCookie('X-XSRF-TOKEN', 'XXXX', '+0 days');
 
 		die("1");
+		$app-setCookie('X-XSRF-TOKEN', 'XXXX', '+0 days');
+
+
 		//$app-setCookie("X-AUTH-TOKEN", getRandomToken(64)."", "7 days");
 
 		$response = $app->response;
 		$response['Content-Type'] = 'application/json';
 
 		$data = array();
-		$data["success"]	= getSuccess($code);
-    		$data["message"]	= getMessage($code);
-    		$data["reason"]	        = getReason($code);
-    		$data["redirect_url"]   = getRedirectUrl($code);
-    		$data["attempt_count"]  = getAttemptCount($count);
-		 
+		$data["success"]				= getSuccess($code);
+    $data["message"]				= getMessage($code);
+    $data["reason"]	     	= getReason($code);
+    $data["redirect_url"]   = getRedirectUrl($code);
+    $data["attempt_count"]	= getAttemptCount($count);
+
 		$response->status(getStatus($code));
-		
+
 		$response->body(')]},'.json_encode($data));
 	}
 
@@ -106,16 +107,16 @@
 	}
 
 	$app->group('/api' , function() use ($app) {
-		
+
 		/* session api */
 		$app->group('/session' , function() use ($app) {
 			/* create a session */
 			$app->post('/create', function() use ($app) {
-		
+
 			$request   = $app->request()->getBody();
-			
+
 			if (vln::arr()->validate($request)) {
-				
+
 				if (vln::key("csrf_token",
 						vln::noWhitespace()->notEmpty())->validate($request)) {
 					$csrf_token = $request["csrf_token"];
@@ -123,14 +124,28 @@
 					returnResponse($app, PARA_FAILURE);
 				}
 
+				if (vln::key("source",
+						vln::noWhitespace()->notEmpty())->validate($request)){
+							$source = $request["source"];
+				} else {
+							returnResponse($app, PARA_FAILURE);
+				}
+
+				if (vln::key("auth_token",
+					vln::noWhitespace()->notEmpty())->validate($request)){
+						$source = $request["auth_token"];
+				else {
+						returnResponse($app, PARA_FAILURE);
+				}
+
 				if (vln::key("count",
 						vln::numeric()->noWhitespace()->notEmpty())->validate($request)) {
 					$count 	   = $request["count"];
 				} else {
-					returnResponse($app, PARA_FAILURE);	
+					returnResponse($app, PARA_FAILURE);
 				}
 
-				if (vln::key("username", 
+				if (vln::key("username",
 						vln::email()->noWhitespace()->notEmpty())->validate($request)) {
 					$username  = $request["username"];
 				} else {
@@ -138,12 +153,12 @@
 					$app->stop();
 				}
 
-				if (vln::key("password", 
+				if (vln::key("password",
 						vln::numeric()->noWhitespace()->notEmpty())->validate($request)) {
-					$password  = $request["password"];	
+					$password  = $request["password"];
 				} else {
 					returnResponse($app, PASS_FAILURE, $count);
-					$app->stop();	
+					$app->stop();
 				}
 
 				if (authenticateUser($username, $password)){
@@ -156,10 +171,10 @@
 				returnResponse($app, PARA_FAILURE);
 			}
 		});
-		
+
 		/* destroy a session */
 		$app->post('/destroy', function() use ($app) {
-	
+
 			$request  = $app->request;
     		$app->redirect('/', '200');
 
