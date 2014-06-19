@@ -4,9 +4,9 @@
 require ROOT.'/app/vendor/autoload.php';
 require ROOT.'/app/vendor/redbean/rb.phar';
 
-$slim_configuration = require_once ROOT.'/app/config/config.php';
+$slimConfig = require_once ROOT.'/app/config/config.php';
 
-$app = new \Slim\Slim($slim_configuration);
+$app = new \Slim\Slim($slimConfig);
 $app->add(new \Slim\Middleware\ContentTypes());
 $app->setName('Ceeq');
 
@@ -18,7 +18,7 @@ $rootUri = $app->request()->getRootUri();
 $assetUri = $rootUri;
 
 $app->view()->appendData(
-				array(	
+				array(
 					'app' 		  => $app,
 					'rootUri' 	  => $rootUri,
 					'assetUri' 	  => $assetUri,
@@ -26,12 +26,16 @@ $app->view()->appendData(
 				)
 			);
 
-foreach( glob(ROOT . '/app/routes/*.php') as $router) {
-	include $router;
+foreach( glob(ROOT . '/app/mvc/helpers/*.php') as $helper) {
+	include $helper;
 }
-
-foreach( glob(ROOT . '/app/models/*.php') as $model) {
+die("2");
+foreach( glob(ROOT . '/app/mvc/models/*.php') as $model) {
 	include $model;
+}
+die("3");
+foreach( glob(ROOT . '/app/mvc/controllers/*.php') as $controller) {
+	include $controller;
 }
 
 $view = $app->view();
