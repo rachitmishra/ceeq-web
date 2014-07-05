@@ -29,11 +29,11 @@ $app->view()->appendData(
 foreach( glob(ROOT . '/app/mvc/helpers/*.php') as $helper) {
 	include $helper;
 }
-die("2");
+
 foreach( glob(ROOT . '/app/mvc/models/*.php') as $model) {
 	include $model;
 }
-die("3");
+
 foreach( glob(ROOT . '/app/mvc/controllers/*.php') as $controller) {
 	include $controller;
 }

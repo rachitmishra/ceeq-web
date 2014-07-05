@@ -1,8 +1,8 @@
 <?php 
 
-public class BaseEntity {
+class BaseEntity {
 	
-	$id;
+	private $id;
 
 	public function getId(){
 		return $this->id;
@@ -17,5 +17,4 @@ public class BaseEntity {
 			'id'	=> $this->getId()
 		);
 	}
-
 }

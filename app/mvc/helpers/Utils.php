@@ -1,6 +1,6 @@
 <?php 
 
-public class Utils {
+class Utils {
 	
     public function cryptoRandomSecure($min, $max) {
         $range = $max - $min;
@@ -27,5 +27,3 @@ public class Utils {
         return $token;
 	}
 }
-
-die("c");

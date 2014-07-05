@@ -16,25 +16,25 @@ CREATE TABLE IF NOT EXISTS users (
 
 <?php
 
-public class User extends BaseEntity {
+class User extends BaseEntity {
 
-	private String $name;
+	private $name;
 
-	private String $email;
+	private $email;
 
-	private String $number;
+	private $number;
 
-	private int $deviceCount;
+	private $deviceCount;
 
-	private String $registeredOn;
+	private $registeredOn;
 
-	private String $lastIp;
+	private $lastIp;
 
-	private String $lastSeen;
+	private $lastSeen;
 
 	private $devices;
 
-	private boolean $isBeta;
+	private $isBeta;
 
 	public function getName(){
 		return $this->name;

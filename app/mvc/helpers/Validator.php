@@ -2,7 +2,7 @@
 
 use Respect\Validation\Validator as vln;
 
-public class Validator {
+class Validator {
 
 	public function isEmail($param, $request) {
 		if(vln::key($param, vln::email()->noWhitespace()->notEmpty())->validate($request)) {
@@ -32,9 +32,6 @@ public class Validator {
 		if(vln::arr()->validate($request)) {
 			return true;
 		}
-
 		return false;
 	}
 }
-
-die("d");

@@ -1,6 +1,6 @@
 <?php 
 
-public class Helper {
+class Helper {
 
 	public function getStatus($code){
 		switch($code){
@@ -75,5 +75,3 @@ public class Helper {
 		return $count;
 	}
 }
-
-die("b");

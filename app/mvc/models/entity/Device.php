@@ -24,39 +24,41 @@ CREATE TABLE IF NOT EXISTS devices (
 
 <?php 
 
-public class Device extends BaseEntity {
+include ROOT.'/app/mvc/models/entity/BaseEntity.php';
 
-	private int $userId;
+class Device extends BaseEntity {
 
-	private String $name;
+	private $userId;
 
-	private int $imeiNumber;
+	private $name;
 
-	private String $type;
+	private $imeiNumber;
 
-	private String $modelName;
+	private $type;
 
-	private String $codeName;
+	private $modelName;
 
-	private String $manufacturerName;
+	private $codeName;
 
-	private boolean $isTablet;
+	private $manufacturerName;
 
-	private boolean $isRooted;
+	private $isTablet;
 
-	private boolean $isDeviceAdminAllowed;
+	private $isRooted;
 
-	private int $currentSimNumber;
+	private $isDeviceAdminAllowed;
 
-	private int $currentImsiNumber;
+	private $currentSimNumber;
 
-	private String $currentOperatorName;
+	private $currentImsiNumber;
 
-	private int $currentGcmId;
+	private $currentOperatorName;
 
-	private	int $lastLocationId;
+	private $currentGcmId;
 
-	private String $lastSeen;
+	private $lastLocationId;
+
+	private $lastSeen;
 
 	public function getUserId(){
 		return $this->userId;

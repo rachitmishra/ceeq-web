@@ -2,7 +2,7 @@
 
 include ROOT.'/app/mvc/models/entity/Device.php';
 
-public class DeviceModel {
+class DeviceModel {
 
 	private $device;
 
@@ -14,7 +14,7 @@ public class DeviceModel {
 
 	}
 
-	public function read($id) {
+	public function readOne($id) {
 
 	}
 
@@ -31,4 +31,3 @@ public class DeviceModel {
 	}
 
 }
-

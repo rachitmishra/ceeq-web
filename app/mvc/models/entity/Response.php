@@ -1,22 +1,22 @@
 <?php 
 
-public class Response {
+class Response {
 
 	private $app;
 
 	private $code;
 
-	private int $statusCode;
+	private $statusCode;
 
-	private String $message;
+	private $message;
 
-	private String $shortMessage;
+	private $shortMessage;
 
-	private String $reditectUrl;
+	private $reditectUrl;
 
-	private int $attemptCount;
+	private $attemptCount;
 
-	private boolean $isError;
+	private $isError;
 
 	private $response;
 
@@ -86,10 +86,10 @@ public class Response {
 		);
 	}
 
-	public function fire($entity = null){
+	public function fire($entity = false){
 		$data;
 		if($entity) {
-			$data = array_merge($this->serialize(), $entity->serialize())
+			$data = array_merge($this->serialize(), $entity->serialize());
 		}
 		$this->$response->body(')]},'.json_encode($data));
 	}

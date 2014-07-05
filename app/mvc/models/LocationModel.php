@@ -2,7 +2,7 @@
 
 include ROOT.'/app/mvc/models/entity/Location.php';
 
-public class LocationModel {
+class LocationModel {
 
 	private $location;
 
@@ -14,7 +14,7 @@ public class LocationModel {
 
 	}
 
-	public function read($id) {
+	public function readOne($id) {
 
 	}
 
@@ -29,6 +29,4 @@ public class LocationModel {
 	public function delete($id) {
 		
 	}
-
 }
-

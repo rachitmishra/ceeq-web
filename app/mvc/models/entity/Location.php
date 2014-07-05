@@ -15,21 +15,21 @@ CREATE TABLE IF NOT EXISTS locations (
 -->
 <?php
 
-public class Location extends BaseEntity {
+class Location extends BaseEntity {
 
-	private float $latitude;
+	private $latitude;
 
-	private float $longitude;
+	private $longitude;
 
-	private int $deviceId;
+	private $deviceId;
 
-	private int $batteryLevel;
+	private $batteryLevel;
 
-	private String $lastSeen;
+	private $lastSeen;
 
-	private boolean $isMoving;
+	private $isMoving;
 
-	private boolean $isPrecise;
+	private $isPrecise;
 
 	public function getLatitude() {
 		return $this->latitude;

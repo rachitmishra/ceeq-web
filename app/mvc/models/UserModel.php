@@ -2,7 +2,7 @@
 
 include ROOT.'/app/mvc/models/entity/User.php';
 
-public class UserModel {
+class UserModel {
 
 	public function __construct(){
 	}
@@ -27,8 +27,7 @@ public class UserModel {
 
 	}
 
-	public function read($id) {
-		return null;
+	public function readOne($id) {
 	}
 
 	public function read() {
