@@ -1,35 +1,35 @@
 <?php 
 
-use Respect\Validation\Validator as vln;
+use Respect\Validation\Validator as v;
 
-class Validator {
+class Validatr {
 
-	public function isEmail($param, $request) {
-		if(vln::key($param, vln::email()->noWhitespace()->notEmpty())->validate($request)) {
+	public static function isEmail($param, $request) {
+		if(v::key($param, v::email()->noWhitespace()->notEmpty())->validate($request)) {
 			return true;
 		}
 
 		return false;
 	}
 
-	public function isNumber($param, $request) {
-		if(vln::key($param, vln::numeric()->noWhitespace()->notEmpty())->validate($request)) {
+	public static function isNumber($param, $request) {
+		if(v::key($param, v::numeric()->noWhitespace()->notEmpty())->validate($request)) {
 			return true;
 		}
 
 		return false;
 	}
 
-	public function isText($param, $request) {
-		if(vln::key($param, vln::noWhitespace()->notEmpty())->validate($request)) {
+	public static function isText($param, $request) {
+		if(v::key($param, v::noWhitespace()->notEmpty())->validate($request)) {
 			return true;
 		}
 
 		return false;
 	}
 
-	public function isArray($request) {
-		if(vln::arr()->validate($request)) {
+	public static function isArray($request) {
+		if(v::arr()->validate($request)) {
 			return true;
 		}
 		return false;

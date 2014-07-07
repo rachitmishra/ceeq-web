@@ -4,6 +4,6 @@
         "slim/views": "0.1.*",
         "twig/twig"	: "1.*",
         "nesbot/Carbon": "*",
-        "respect/validation": "dev-master",
+        "respect/validation": "dev-master"
     }
 }

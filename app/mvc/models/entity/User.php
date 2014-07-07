@@ -1,19 +1,3 @@
-<!-- SQL
-
-CREATE TABLE IF NOT EXISTS users (
-	id integer(10) PRIMARY KEY AUTO_INCREMENT,
-	name varchar(32) NULL,
-	password varchar(32) NOT NULL,
-	email varchar(32) NOT NULL,
-	number varchar(32) NOT NULL,
-	device_count integer(10) NOT NULL,
-	registration_on Datetime,
-	last_ip varchar(48) NOT NULL,
-	devices text NOT NULL,
-	is_beta boolean NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
--->
-
 <?php
 
 class User extends BaseEntity {

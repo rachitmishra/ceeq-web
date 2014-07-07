@@ -2,7 +2,7 @@
 
 class Utils {
 	
-    public function cryptoRandomSecure($min, $max) {
+    public static function cryptoRandomSecure($min, $max) {
         $range = $max - $min;
         if ($range < 0) return $min;
         $log = log($range, 2);
@@ -16,7 +16,7 @@ class Utils {
         return $min + $rnd;
 	}
 
-	public function getRandomToken($length){
+	public static function getRandomToken($length){
     	$token = "";
     	$codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     	$codeAlphabet.= "abcdefghijklmnopqrstuvwxyz";

@@ -1,27 +1,3 @@
-<!-- SQL
-
-CREATE TABLE IF NOT EXISTS devices (
-	id integer(10) PRIMARY KEY AUTO_INCREMENT,
-	user_id integer(10) NOT NULL,
-	name varchar(32) NULL,
-	imeiNumber_number varchar(24) NOT NULL,
-	type varchar(24) NULL,
-	model_name varchar(24) NOT NULL,
-	code_name varchar(24) NULL,
-	manufacturer_name varchar(24) NOT NULL,
-	is_tablet boolean NOT NULL,
-	is_rooted boolean NOT NULL,
-	is_device_admin_allowed boolean NOT NULL,
-	current_sim_number varchar(24) NULL,
-	current_imsi_number varchar(24) NULL,
-	current_operator_name varchar(24) NULL,
-	current_gcm_id varchar(64) NOT NULL,
-	last_location_id integer(10) NULL,
-	last_seen Datetime NOT NULL,
-	FOREIGN KEY (user_id) REFERENCES users(id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
--->
-
 <?php 
 
 include ROOT.'/app/mvc/models/entity/BaseEntity.php';

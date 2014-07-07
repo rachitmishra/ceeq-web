@@ -2,7 +2,7 @@
 
 class Helper {
 
-	public function getStatus($code){
+	public static function getStatus($code){
 		switch($code){
 			case AUTH_SUCCESS:
 			return 200;
@@ -17,7 +17,7 @@ class Helper {
 		}
 	}
 
-	public function getError($code){
+	public static function getError($code){
 		switch($code){
 			case AUTH_SUCCESS:
 			return false;
@@ -30,7 +30,7 @@ class Helper {
 		}
 	}
 
-	public function getMessage($code = AUTH_SUCCESS){
+	public static function getMessage($code = AUTH_SUCCESS){
 		switch($code){
 			case AUTH_SUCCESS:
 			return "Authentication successful.";
@@ -44,7 +44,7 @@ class Helper {
 		}
 	}
 
-	public function getShortMessage($code = AUTH_SUCCESS){
+	public static function getShortMessage($code = AUTH_SUCCESS){
 		switch($code){
 			case PARA_FAILURE:
 			return "Incomplete or wrong parameters.";
@@ -59,7 +59,7 @@ class Helper {
 		}
 	}
 
-	public function getRedirectUrl($code = AUTH_SUCCESS){
+	public static function getRedirectUrl($code = AUTH_SUCCESS){
 		switch($code){
 			case AUTH_SUCCESS:
 			return "dashboard";
