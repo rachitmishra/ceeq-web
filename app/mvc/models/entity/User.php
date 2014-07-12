@@ -10,13 +10,11 @@ class User extends BaseEntity {
 
 	private $deviceCount;
 
-	private $registeredOn;
+	private $registrationOn;
 
 	private $lastIp;
 
 	private $lastSeen;
-
-	private $devices;
 
 	private $isBeta;
 
@@ -25,7 +23,7 @@ class User extends BaseEntity {
 	}
 
 	public function setName($name){
-		return $this->name = $name;
+		$this->name = $name;
 	}
 
 	public function getEmail(){
@@ -33,7 +31,7 @@ class User extends BaseEntity {
 	}
 
 	public function setEmail($email){
-		return $this->email = $email;
+		$this->email = $email;
 	}
 
 	public function getNumber(){
@@ -41,7 +39,7 @@ class User extends BaseEntity {
 	}
 
 	public function setNumber($number){
-		return $this->number = $number;
+		$this->number = $number;
 	}
 
 	public function getDeviceCount(){
@@ -49,15 +47,15 @@ class User extends BaseEntity {
 	}
 
 	public function setDeviceCount($deviceCount){
-		return $this->deviceCount = $deviceCount;
+		$this->deviceCount = $deviceCount;
 	}
 
-	public function getRegisteredOn(){
+	public function getRegistrationOn(){
 		return $this->registrationOn;
 	}
 
-	public function setRegisteredOn($registeredOn){
-		return $this->registeredOn = $registeredOn;
+	public function setRegistrationOn($registrationOn){
+		$this->registrationOn = $registrationOn;
 	}
 
 	public function getLastIp(){
@@ -65,7 +63,7 @@ class User extends BaseEntity {
 	}
 
 	public function setLastIp($lastIp){
-		return $this->lastIp = $lastIp;
+		$this->lastIp = $lastIp;
 	}
 
 	public function getLastSeen(){
@@ -73,15 +71,7 @@ class User extends BaseEntity {
 	}
 
 	public function setLastSeen($lastSeen){
-		return $this->lastSeen = $lastSeen;
-	}
-
-	public function getDevices(){
-		return $this->devices;
-	}
-
-	public function setDevices($devices){
-		return $this->devices = $devices;
+		$this->lastSeen = $lastSeen;
 	}
 
 	public function getIsBeta(){
@@ -89,21 +79,34 @@ class User extends BaseEntity {
 	}
 
 	public function setIsBeta($isBeta){
-		return $this->isBeta = $isBeta;
+		$this->isBeta = $isBeta;
+	}
+
+	public function set($user) {
+		$this->setId($user->id);
+		$this->name = $user->name;
+		$this->email = $user->email; 
+		$this->number = $user->number;
+		$this->deviceCount = $user->device_count;
+		$this->registrationOn = $user->registeration_on;
+		$this->lastIp = $user->last_ip;
+		$this->lastSeen = $user->last_seen;
+		$this->isBeta = $user->beta;
 	}
 
 	public function serialize(){
-		return array_merge( array(
+		
+		return  array_merge( array(
 			'name' 			=> $this->getName(),
 			'email' 		=> $this->getEmail(),
 			'number' 		=> $this->getNumber(),
 			'device_count' 	=> $this->getDeviceCount(),
-			'registered_on'	=> $this->getRegisteredOn(),
+			'registered_on'	=> $this->getRegistrationOn(),
 			'last_ip' 		=> $this->getLastIp(),
 			'last_seen'		=> $this->getLastSeen(),
 			'is_beta'		=> $this->getIsBeta()
 			),
-			$parent::serialize()
+			parent::serialize()
 		);
 	}
 }

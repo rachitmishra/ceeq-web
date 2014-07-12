@@ -18,5 +18,5 @@ $slim_configuration =  array(
 );
 
 /* Redbean configuration */
-$db = R::setup('mysql:host=localhost;dbname=ceeq', 'ceeq','jpWeCCCB5BFSwBSr');
+$db = R::setup('mysql:host=localhost;dbname=ceeq', 'ceeq','NS28YjmQYB3NUJcf');
 return $slim_configuration;

@@ -1,13 +1,11 @@
 <?php
 
-include ROOT.'/app/mvc/models/entity/Response.php';
-
 $app->group('/api' , function() use ($app) {
 	$app->group('/v1' , function() use ($app) {
 		$app->group('/session' , function() use ($app) {
 			$app->post('/create', function() use ($app) {
 
-				$request   = $app->request()->getBody();
+				$request  = json_decode($app->request()->getBody(), true);
 
 				if (Validatr::isArray($request)) {
 
@@ -15,18 +13,21 @@ $app->group('/api' , function() use ($app) {
 						$apiToken = $request["api_token"];
 					} else {
 						response($app, PARA_FAILURE);
+						$app->stop(); 
 					}
-
+					 
 					if (Validatr::isText("source", $request)){
 						$source = $request["source"];
 					} else {
 						response($app, PARA_FAILURE);
+						$app->stop();
 					}
 
 					if (Validatr::isNumber("count", $request)){
 						$count = $request["count"];
 					} else {
 						response($app, PARA_FAILURE);
+						$app->stop();
 					}
 
 					if (Validatr::isEmail("username", $request)) {
@@ -43,9 +44,11 @@ $app->group('/api' , function() use ($app) {
 						$app->stop();
 					}
 
-					$id = $userModel->authenticate($username, $password);
+
+					$id = UserModel::authenticate($username, $password);
+
 					if ($id){
-						response($app, AUTH_SUCCESS, $userModel->readOne($id));
+						response($app, AUTH_SUCCESS, UserModel::readOne($id));
 					} else {
 						response($app, AUTH_FAILURE);
 					}
@@ -86,7 +89,7 @@ function response($app, $code, $entity = null) {
 	);
 
 	if($entity) {
-			$data = array_merge($data, $entity->serialize());
+		$data = array_merge($data, array('user'=>$entity->serialize()));
 	} 
 
 	$app->response->body(')]},'.json_encode($data));

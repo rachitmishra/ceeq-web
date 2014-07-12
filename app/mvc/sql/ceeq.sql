@@ -1,14 +1,16 @@
 CREATE TABLE IF NOT EXISTS users (
 	id integer(10) PRIMARY KEY AUTO_INCREMENT,
 	name varchar(32) NULL,
+	username varchar(32) NULL,
 	password varchar(32) NOT NULL,
 	email varchar(32) NOT NULL,
 	number varchar(32) NOT NULL,
 	device_count integer(10) NOT NULL,
 	registration_on Datetime,
 	last_ip varchar(48) NOT NULL,
-	devices text NOT NULL,
-	is_beta boolean NOT NULL
+	last_seen Datetime,
+	is_beta boolean NOT NULL,
+	google_auth_token varchar(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 CREATE TABLE IF NOT EXISTS devices (
@@ -20,9 +22,9 @@ CREATE TABLE IF NOT EXISTS devices (
 	model_name varchar(24) NOT NULL,
 	code_name varchar(24) NULL,
 	manufacturer_name varchar(24) NOT NULL,
-	is_tablet boolean NOT NULL,
-	is_rooted boolean NOT NULL,
-	is_device_admin_allowed boolean NOT NULL,
+	tablet boolean NOT NULL,
+	rooted boolean NOT NULL,
+	device_admin_allowed boolean NOT NULL,
 	current_sim_number varchar(24) NULL,
 	current_imsi_number varchar(24) NULL,
 	current_operator_name varchar(24) NULL,

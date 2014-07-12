@@ -19,7 +19,7 @@ class __TwigTemplate_93e177bcc7d1bb87d234f1240902677a3aa1e9e993025837e8d246a228b
         $this->env->loadTemplate("templates/header.html.twig")->display($context);
         // line 2
         echo "
-<div class=\"container\" ng-view>
+<div class=\"container-fluid\" ng-view>
 </div>
 
 ";

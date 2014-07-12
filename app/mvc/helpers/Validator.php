@@ -34,4 +34,11 @@ class Validatr {
 		}
 		return false;
 	}
+
+	public static function isJson($request) {
+		if(v::json()->validate($request)) {
+			return true;
+		}
+		return false;
+	}
 }

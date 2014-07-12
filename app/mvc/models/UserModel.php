@@ -4,41 +4,42 @@ include ROOT.'/app/mvc/models/entity/User.php';
 
 class UserModel {
 
-	public function __construct(){
-	}
-
-	public function authenticate($username, $password) {
-		$query = 'SELECT id FROM login 
-		WHERE userid = :username 
-		AND userpin = :password 
+	public static function authenticate($username, $password) {
+		$query = 'SELECT id FROM users 
+		WHERE email = :username 
+		AND password = :password 
 		LIMIT 1';
 
-		$row = R::getRow( $query, 
+		$row = R::getCell( $query, 
 			array(':username'=>$username, ':password'=>md5($password)));
 
 		if($row) {
-			return $row->getId();
+			return $row;
 		}
 
 		return false;
 	}
 
-	public function create($user) {
+	public static function create($user) {
 
 	}
 
-	public function readOne($id) {
+	public static function readOne($id) {
+		$user_bean =  R::load("users", $id);
+		$user = new User();
+		$user->set($user_bean);
+		return $user;
 	}
 
-	public function read() {
+	public static function read() {
 
 	}
 
-	public function update($id) {
+	public static function update($id) {
 
 	}
 
-	public function delete($id) {
+	public static function delete($id) {
 
 	}
 
